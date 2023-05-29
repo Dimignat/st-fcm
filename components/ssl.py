@@ -4,13 +4,14 @@ import pandas as pd
 from typing import Any, Union, Tuple
 from numpy.typing import NDArray
 from sklearn.calibration import CalibratedClassifierCV
+from dataloader import AbstractDataLoader
 
 
 class SemiSupervisedModel:
     """
     A self-training algorithm based on Fuzzy C-Means clustering
     """
-    def __init__(self, model: Any, clustering: Any, dataloader, kernel_approx=None):
+    def __init__(self, model: Any, clustering: Any, dataloader: AbstractDataLoader, kernel_approx=None):
         """
 
         :param model: Any classification model available in the scikit-learn package.
